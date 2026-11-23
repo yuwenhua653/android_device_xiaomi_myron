@@ -1,0 +1,18 @@
+# Copyright (C) 2026 The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
+# The vendor loader launches parallel modprobes and sets this property after
+# waiting for them, without propagating individual failures. Retry the native
+# RMNET dependency chain once after that batch has finished. modprobe resolves
+# dependencies and leaves modules that are already loaded alone.
+on property:vendor.all.modules.ready=1
+    start vendor.myron-netmodules
+
+service vendor.myron-netmodules /vendor/bin/modprobe -a -d /vendor_dlkm/lib/modules rmnet_core rmnet_perf rmnet_shs
+    class core
+    user root
+    group root system
+    disabled
+    oneshot
+    stdio_to_kmsg
+    seclabel u:r:vendor_modprobe:s0

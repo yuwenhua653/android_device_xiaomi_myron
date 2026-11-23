@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: Apache-2.0
+# The vendor batch can attempt modules in parallel. Retry video once when that
+# batch has completed; modprobe uses the generated hard dependencies and skips
+# already loaded modules. No periodic poll or codec service restart.
+on property:vendor.all.modules.ready=1
+    start vendor.myron-videomodules
+
+service vendor.myron-videomodules /vendor/bin/modprobe -a -d /vendor_dlkm/lib/modules msm_video
+    class core
+    user root
+    group root system
+    disabled
+    oneshot
+    stdio_to_kmsg
+    seclabel u:r:vendor_modprobe:s0

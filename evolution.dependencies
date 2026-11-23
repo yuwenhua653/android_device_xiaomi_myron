@@ -1,0 +1,46 @@
+[
+  {
+    "repository": "device_xiaomi_myron-miuicamera",
+    "target_path": "device/xiaomi/myron-miuicamera"
+  },
+  {
+    "repository": "device_xiaomi_sm8850-common",
+    "target_path": "device/xiaomi/sm8850-common"
+  },
+  {
+    "repository": "Evolution-X-Devices/hardware_xiaomi",
+    "target_path": "hardware/xiaomi",
+    "branch": "cnb",
+    "remote": "github-non-los"
+  },
+  {
+    "repository": "vendor_xiaomi_myron",
+    "target_path": "vendor/xiaomi/myron"
+  },
+  {
+    "repository": "vendor_xiaomi_myron-miuicamera",
+    "target_path": "vendor/xiaomi/myron-miuicamera"
+  },
+  {
+    "repository": "vendor_xiaomi_sm8850-common",
+    "target_path": "vendor/xiaomi/sm8850-common"
+  },
+  {
+    "repository": "yuwenhua653/oppo_oplus_realme_sm8850",
+    "target_path": "kernel/xiaomi/sm8850",
+    "branch": "myron/native-kbuild",
+    "remote": "github-non-los"
+  },
+  {
+    "repository": "yuwenhua653/oppo_oplus_realme_sm8850",
+    "target_path": "kernel/xiaomi/sm8850-modules",
+    "branch": "myron/native-modules",
+    "remote": "github-non-los"
+  },
+  {
+    "repository": "yuwenhua653/oppo_oplus_realme_sm8850",
+    "target_path": "kernel/xiaomi/sm8850-devicetrees",
+    "branch": "myron/native-devicetrees",
+    "remote": "github-non-los"
+  }
+]

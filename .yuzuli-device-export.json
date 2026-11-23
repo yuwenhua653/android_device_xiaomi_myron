@@ -1,0 +1,454 @@
+{
+  "schema": 1,
+  "owner": "yuwenhua653",
+  "source_path": "device/xiaomi/myron",
+  "source_head": "60779f8aacaca9d2368a3c31b743c70f8e167a3c",
+  "source_github_origin": null,
+  "history_exported": false,
+  "files": {
+    "Android.bp": {
+      "sha256": "01231e369ed967768c9b4d21e65c50b3b7d79eba967c7a74001b77214de532f5",
+      "blob": "e6bcc756541fa4a693a1a01e47de2145e31f5a6e",
+      "mode": "100644",
+      "size": 113
+    },
+    "Android.mk": {
+      "sha256": "9c930ea70e7804e052e01c62ce22d7c90940d39ff3de676f2af4acbc7452d2df",
+      "blob": "2ad493ea5d26ef0eac0f45f2ebb8b17a90d36087",
+      "mode": "100644",
+      "size": 113
+    },
+    "AndroidProducts.mk": {
+      "sha256": "9e70adcba40ca4e7ef68c9cde16fba2264cf9fe53881538b20ed1757baf9563c",
+      "blob": "83ab027ed82e83000861dbe8c776158ab37e7586",
+      "mode": "100644",
+      "size": 154
+    },
+    "BoardConfig.mk": {
+      "sha256": "5ceb75a54ed9ffd4931f56732857f842c0c052b6de08247d9479565c0bacfec9",
+      "blob": "ec38190d28129b25146d9f5010d9ccb8d72ab638",
+      "mode": "100644",
+      "size": 1787
+    },
+    "README.MD": {
+      "sha256": "a97816d7288599e7f1cd8780b648296c39500b8028167d584b5578984f47bd09",
+      "blob": "b17a7e79fccaaf0336d9fa2d163d95b4d2a98264",
+      "mode": "100644",
+      "size": 2183
+    },
+    "board-info.txt": {
+      "sha256": "97bc7c5a3f2b08af4f81050383e564b3de3615f310eeaef1204c3798c59af8fe",
+      "blob": "3e62f61fac7640693490f39b3193b7c78adbc507",
+      "mode": "100644",
+      "size": 26
+    },
+    "configs/properties/odm.prop": {
+      "sha256": "7b4ca9d6fa142cc38c4d0cfdbf31c5e3ce9c78526fb6f2054660f6c8e0ce22aa",
+      "blob": "90536d63fc342c04ae6b29e917b275b64db2afb3",
+      "mode": "100644",
+      "size": 572
+    },
+    "configs/properties/odm_CN.prop": {
+      "sha256": "d3f3203e2484c59010aab117b943200484b78709b770b1097d687cbbd09b1d37",
+      "blob": "fbebab23a7a7d31602a2d9294c390a2e376d9f21",
+      "mode": "100644",
+      "size": 217
+    },
+    "configs/properties/odm_GL.prop": {
+      "sha256": "3e0189e51ddda566bd6fd7afbc85445b4a48227ab4d91fd95a345d4336530045",
+      "blob": "d26a00b23569b084f4d93590afc28799d578e3fc",
+      "mode": "100644",
+      "size": 211
+    },
+    "configs/properties/vendor.prop": {
+      "sha256": "c816542b9cc1e3c1b4fd6a7b1cecc39593728435269c47670a9cca894e7c5749",
+      "blob": "e0e6c4bf4548faa3b5af8ac3aec7885ca3880142",
+      "mode": "100644",
+      "size": 1205
+    },
+    "device.mk": {
+      "sha256": "61b2b65781f15f41968389ee03642831b98cb34f2d7721d963a583f7f161d258",
+      "blob": "dc90ebd568a40e446fb1923965ab9d264654ce1a",
+      "mode": "100644",
+      "size": 1719
+    },
+    "evolution.dependencies": {
+      "sha256": "dda339dce5dfbd27feebd19295ca821d7f06a6c6853a6c6f16ef600dbd592a1c",
+      "blob": "f67201960e55b37ad58f7cc1805ba5d08dea8f42",
+      "mode": "100644",
+      "size": 1250
+    },
+    "extract-files.py": {
+      "sha256": "562b5e06b9739805e5bd65833984776bc0665ee702aca1221b6283a06110edd2",
+      "blob": "9e765fbe79f304dd7577b9367de5db8d845bd888",
+      "mode": "100755",
+      "size": 6738
+    },
+    "init/init.myron-kernel.rc": {
+      "sha256": "7ac2486f1458555e9caca17aa143f1cff248d5375c12720b798cd21a6be86c78",
+      "blob": "0f479d030d31757f76342e55a0f20493033ec08b",
+      "mode": "100644",
+      "size": 701
+    },
+    "init/init.myron-video.rc": {
+      "sha256": "f8b17553c1a268232ec272f5c2c2e6e917efad5877e95c25fce8d7b9baae0653",
+      "blob": "4f42798bda18d99e53512baaf19197d248e261f4",
+      "mode": "100644",
+      "size": 567
+    },
+    "init/init.myron.rc": {
+      "sha256": "bb87e22deafa120d41c83906603078ce79f0304025a9b975b9abec9c86cb9971",
+      "blob": "336a5966cbe365be09d4d9ad30e50dba7b976da2",
+      "mode": "100644",
+      "size": 851
+    },
+    "kernel/BoardConfigKernel.mk": {
+      "sha256": "30674daa6f5a3be41b8562ba9cfa9bbe67aef9a0ced7c1ec6d7903d28408516c",
+      "blob": "dff16cc4279f4cf84017d278c85c1d01a2799af9",
+      "mode": "100644",
+      "size": 2658
+    },
+    "kernel/DT-CHECK-R115.json": {
+      "sha256": "373cedc1f943bd6b71b7d3d57d7c19560432579441bdabe645f7823d2e5833c8",
+      "blob": "27d4fa06f42d737ddf8f3121f14b28c59e032a12",
+      "mode": "100644",
+      "size": 10528
+    },
+    "kernel/DT-CHECK-R118-EXPANDED.json": {
+      "sha256": "3f2d29cd4970d75abc03f840b482b7330ac334e1e540936e208bff8d88f96f1f",
+      "blob": "11d56879d12f563370c5d6f30f211b770ff38887",
+      "mode": "100644",
+      "size": 7864
+    },
+    "kernel/DT-CHECK-R118.json": {
+      "sha256": "87f2f06121fdb4b001856173eb3f279f3a93eb097fa12500d6bc8a86fe92b0e1",
+      "blob": "f6a226f126ac915714eecf3fd55b58775e184159",
+      "mode": "100644",
+      "size": 6595
+    },
+    "kernel/DT-CHECK-R119.json": {
+      "sha256": "ff4b665997ac59282f7551b40ae90d8d97d57eac333a85ad4c0ff2b00d5a1b30",
+      "blob": "839e8dbbaa986af4bc62bc67b15915c94c2939ab",
+      "mode": "100644",
+      "size": 12549
+    },
+    "kernel/DT-COMPILE-R118-EXPANDED.json": {
+      "sha256": "76b0e30c02e6e3dd77521ad54a131e696431332c41e1a09d0e801ad7b5996081",
+      "blob": "5fca3f4a3a88bd218445a57c02d4d51b1c54c997",
+      "mode": "100644",
+      "size": 9168
+    },
+    "kernel/DT-COMPILE-R118.json": {
+      "sha256": "830217c4f2c2b14aca42767a2cb2da1c7bf6165ed9c739ba76ea2a10a34fd0c8",
+      "blob": "23fc52a669bebbbf0f15e9215d55455cd8ae6e87",
+      "mode": "100644",
+      "size": 8132
+    },
+    "kernel/DT-ID-MATCHING.md": {
+      "sha256": "da3e32d3f97ed2a861c250a7d4d4bde3c37172bcf59297565e6b50a19faa3c97",
+      "blob": "653e4e7c064298f085cf9a48c88a37a4a23409a7",
+      "mode": "100644",
+      "size": 2933
+    },
+    "kernel/DT-STATUS.md": {
+      "sha256": "70e6b274bd940616a1a7089f75eb1281eeb08e6bf6f00b114a15bf48000821ea",
+      "blob": "7aa0d64a7dbdcc142e9a506e5758d184bdd75556",
+      "mode": "100644",
+      "size": 1098
+    },
+    "kernel/DT-VALIDATION-R123.json": {
+      "sha256": "e43dbb289b884c0ecd9ec478953381b16e9052ed5b42a8f702f9d092a9e05e77",
+      "blob": "958db74b35a289ebb805032f804b105f2e4eba21",
+      "mode": "100644",
+      "size": 1642
+    },
+    "kernel/NATIVE-VALIDATION.json": {
+      "sha256": "37b20b0b953420421b056bc905567b3c64f554509fd23347648808d31fc33c72",
+      "blob": "1fbcb085cc39310ba112830ea824fad468963c9d",
+      "mode": "100644",
+      "size": 3343
+    },
+    "kernel/README-CN.md": {
+      "sha256": "8e8d4697fad8c64e87246653cc07ee31a2595594e15fc44210eca402150eabaa",
+      "blob": "26704d26d269e5a6d72bed9fad5265fb68224913",
+      "mode": "100644",
+      "size": 3618
+    },
+    "kernel/VALIDATION.json": {
+      "sha256": "75ca2929f9317fd6cfd81fe73ea9787586167ef9658fb420d4bbfb3a3b5783de",
+      "blob": "ebe0d2e40aacaa6f65631957d160f6b2a630a73a",
+      "mode": "100644",
+      "size": 4068
+    },
+    "kernel/audit_dt.py": {
+      "sha256": "ca0aa8a9abaef22acf5a2d179682740997c37f03efa0bd2fd610fafc3d7ccf80",
+      "blob": "45405888b609d114967b831097602c24a9560906",
+      "mode": "100644",
+      "size": 3174
+    },
+    "kernel/dt-profile.json": {
+      "sha256": "a89d4222408235324f2eef1b26cf57158897c2925759a6f447c817fae1fe63dc",
+      "blob": "6e3b5e8ca15424e97bd79a7b15dfc4260c516faf",
+      "mode": "100644",
+      "size": 12973
+    },
+    "kernel/dtb.mk": {
+      "sha256": "6538f2109f1618661c435489f762c44418ffd389416112af7c9e193881a89a24",
+      "blob": "d30dc5e6af0f3ae2cd97b48ca98d782e87237666",
+      "mode": "100644",
+      "size": 1278
+    },
+    "kernel/dtbo.mk": {
+      "sha256": "070d9b635fb559cc06c305203ab1fd64a98405a61545ce663f5b9034264f45ae",
+      "blob": "f3bfb22f7e25ee6a3177a3a76453e293dc8fbcee",
+      "mode": "100644",
+      "size": 229
+    },
+    "kernel/local_manifest.xml": {
+      "sha256": "64af7aeb98dc5b21dbf1026dad6607c17f48883f66b6611833d8dd6e7461be6f",
+      "blob": "5681057ed78a551eabc982510d24db5b5bb78925",
+      "mode": "100644",
+      "size": 737
+    },
+    "kernel/modules.json": {
+      "sha256": "2f6da7b3f69ad6b7e61be7004bfc973b6c8127263ad195ce0393819e2e4de38c",
+      "blob": "3bb30c347e257b06c5450bc98a55b7ab3a167a61",
+      "mode": "100644",
+      "size": 134919
+    },
+    "kernel/modules.mk": {
+      "sha256": "75546e4156d9a242010150b19ea24fd62ca67311450a767f8a03530580fe90ea",
+      "blob": "730842dfa13b08ad60ebe7ba7ff0449243c98c46",
+      "mode": "100644",
+      "size": 25409
+    },
+    "kernel/modules.options": {
+      "sha256": "c75af6e3ca03a453704cb4f108ff475e6fb1e5cef474a051574514370bf5bd6d",
+      "blob": "cf7d3a83d5839c67b5df2c6b804c86ff103165b4",
+      "mode": "100644",
+      "size": 39
+    },
+    "kernel/source_dt.py": {
+      "sha256": "0020f2c2d1bc1af6e3421641250386cc4c0e7fcb48b1c7cdaf25655619ac863a",
+      "blob": "afc524053c70413a2dfbf1c93de5e37de835628a",
+      "mode": "100644",
+      "size": 26789
+    },
+    "kernel/test_fastrpc_order.py": {
+      "sha256": "93e81aa82a415c8db63ed45224831b35acc80907984ee88b1774a7d56f5f453d",
+      "blob": "1cfef6f25e94e0de99a688c2de26a76b90ca3d73",
+      "mode": "100644",
+      "size": 9057
+    },
+    "kernel/test_source_dt.py": {
+      "sha256": "7c0b7c089d8b39fce09087ce9d5834d8db99fdba3c3997f298bbe60b0bb228cc",
+      "blob": "c8a2e86f0199c327d80297a3b94d27b46ca76375",
+      "mode": "100644",
+      "size": 12477
+    },
+    "lineage_myron.mk": {
+      "sha256": "4dbf169d267e0998d3f4dca0dc1fd6af6fa6e94a4dbac98fc770d8f166de5081",
+      "blob": "9b25e77df901d16b6385e2bba15ee2e3b7cb5fcf",
+      "mode": "100644",
+      "size": 980
+    },
+    "overlays/ApertureResMyron/Android.bp": {
+      "sha256": "d7ebd43052a7e97f82c3b1c9179000dac9713655592227ae1f186712226104dc",
+      "blob": "33e0abced940b84e5ae9ceaf9e2cef35e1a0fb19",
+      "mode": "100644",
+      "size": 201
+    },
+    "overlays/ApertureResMyron/AndroidManifest.xml": {
+      "sha256": "2bb3bdfc13360ec21a70a508f9411bd5963024686421ce187f6c6219b216dd6d",
+      "blob": "220c8e1506b60403079ba132df4ab6b0c6a4c0ab",
+      "mode": "100644",
+      "size": 365
+    },
+    "overlays/ApertureResMyron/res/values/config.xml": {
+      "sha256": "ab4954dfaeb1652a25a5132050fa42759763f0440c9b73c949d0a496c8e7f992",
+      "blob": "e26486e84fd4663c830349da8946d1727a8f1290",
+      "mode": "100644",
+      "size": 3921
+    },
+    "overlays/FrameworksResMyron/Android.bp": {
+      "sha256": "f46c44d1684b8310d1095db3ffc19f722dc72f2474790eb7679bbff6117fa466",
+      "blob": "97424ba638e83392a4387e358cf417a318ec9a77",
+      "mode": "100644",
+      "size": 180
+    },
+    "overlays/FrameworksResMyron/AndroidManifest.xml": {
+      "sha256": "b61db1eaf30af9c3f61209e997ffc4eae83189a55f273733bb841922d456e410",
+      "blob": "06a9601b956f201139c75d6859e705d8929340ce",
+      "mode": "100644",
+      "size": 382
+    },
+    "overlays/FrameworksResMyron/res/values/config.xml": {
+      "sha256": "aea6da32f789f5e1d2e1543ff44f61e176289466fe8ecc3efb34c7a4a57d537c",
+      "blob": "97082cf190470fba00b2197736c9cc5275b4f870",
+      "mode": "100644",
+      "size": 18653
+    },
+    "overlays/FrameworksResMyron/res/values/dimens.xml": {
+      "sha256": "dc8e745fa800f5b1a5a4fb2ccfa712866a4d6cd34bd67e7f78c8577347cee049",
+      "blob": "f82717d9e140ea8872be088fdafbd2645dbba3dd",
+      "mode": "100644",
+      "size": 1151
+    },
+    "overlays/FrameworksResMyron/res/xml/irq_device_map.xml": {
+      "sha256": "1fe259c91fe8f27b4f8788c22d4a1b915e39355e9871735bc62fbdf3ce3c81c7",
+      "blob": "7880a31536942b78fbabf0bf586d4bb09a528aec",
+      "mode": "100644",
+      "size": 162
+    },
+    "overlays/FrameworksResMyron/res/xml/power_profile.xml": {
+      "sha256": "6ffc90d15409951548520a20e4a0a37b2d93a7ad24be73652aaf37c8985da3b8",
+      "blob": "566bb15b4f6f71d37f57135ce4a16a396779d533",
+      "mode": "100644",
+      "size": 5582
+    },
+    "overlays/MyronEuiccOverlay/Android.bp": {
+      "sha256": "dca04305828dede51367e250e8da41cfbfc667307f82237bcee16ae582994c68",
+      "blob": "6e6568383cf2ad645d7b38d14a01c85510ae8ffc",
+      "mode": "100644",
+      "size": 180
+    },
+    "overlays/MyronEuiccOverlay/AndroidManifest.xml": {
+      "sha256": "98a9b75422f43e9abed599fd5ca8ddfe3f74c71a86a80287cf5e3678aa6edb85",
+      "blob": "919e83de850bbc9e27db666b5bc10dee26d8a6c3",
+      "mode": "100644",
+      "size": 436
+    },
+    "overlays/MyronEuiccOverlay/res/values/arrays.xml": {
+      "sha256": "6bf9e821c44daac0b1eb02a756c93543f27978eeca0ed494218082fd69724063",
+      "blob": "46d77088a51181d58cde8a7d159e401b534b7a84",
+      "mode": "100644",
+      "size": 1088
+    },
+    "overlays/MyronEuiccOverlay/res/values/config.xml": {
+      "sha256": "61614dadba64dbd493ac58d7e00889a5e67c625ebc4d390ec187f38fe7ce5a97",
+      "blob": "759df2a0f9ddc7bed20cd555cd168c685bf2ddbe",
+      "mode": "100644",
+      "size": 1209
+    },
+    "overlays/SettingsOverlayMyron/Android.bp": {
+      "sha256": "1b3bc67c5ce214bdf006845cd118d4f658641bb71cec19ebace36edd42d386a4",
+      "blob": "f85f23515ffc4d8c044e4c2b1860993e8280a036",
+      "mode": "100644",
+      "size": 178
+    },
+    "overlays/SettingsOverlayMyron/AndroidManifest.xml": {
+      "sha256": "0f3c2c12d1ffc4719ea6a157bb4d8612af2a8bba0e08ac9e9e2306666241d956",
+      "blob": "271a8f1358ce7759233a76adbcd6d0a655777036",
+      "mode": "100644",
+      "size": 503
+    },
+    "overlays/SettingsOverlayMyron/res/values/config.xml": {
+      "sha256": "e342798c72335987cc7f72dd761c1fbd841d17d5b4baa47087f5fcaf0617b69e",
+      "blob": "6eae8461a96e33aaca93f625bcf219fd7f087080",
+      "mode": "100644",
+      "size": 553
+    },
+    "overlays/SettingsProviderOverlayMyron/Android.bp": {
+      "sha256": "ef3f2c3e2b1682e562f08788314849a47add89448c450ca52b56d5b44a138622",
+      "blob": "6c637298a90bc23898dbb8b2f1f94f65153901b4",
+      "mode": "100644",
+      "size": 183
+    },
+    "overlays/SettingsProviderOverlayMyron/AndroidManifest-CN.xml": {
+      "sha256": "243cb816eb60b0fa222c3f91ba5ed2b94bc6130f01659434bc4be4c17f3a9c28",
+      "blob": "51e751db0dd01a8c5742c6649aa184af955caa40",
+      "mode": "100644",
+      "size": 538
+    },
+    "overlays/SettingsProviderOverlayMyron/AndroidManifest.xml": {
+      "sha256": "56c15ab2f5b81a87fd604c04e10ab671a29b67e846772737dcfa9b5d2c89f970",
+      "blob": "715d20b1063ff54423d767cdc8c0da932bcb75a8",
+      "mode": "100644",
+      "size": 419
+    },
+    "overlays/SettingsProviderOverlayMyron/res-CN/values/config.xml": {
+      "sha256": "2b94b36f1c876d3038b8fe48a859027a9c10ba3d1d379e4d7fbf99402cc20e64",
+      "blob": "a4d9dd815395924baa1e5f94fdeee758818ca25f",
+      "mode": "100644",
+      "size": 294
+    },
+    "overlays/SettingsProviderOverlayMyron/res/values/config.xml": {
+      "sha256": "c6ad530b4127bdf33a54aa8ac0eb059c515fd7537a4ae907578329ac50511b1e",
+      "blob": "dcb06ccb98dae9a01a16498c33cfd17cc89ef1d3",
+      "mode": "100644",
+      "size": 290
+    },
+    "overlays/SystemUIResMyron/Android.bp": {
+      "sha256": "1166f5b8c83507228cc2db7fdff18f4d70992d62508ed417b0c8db5cc096138a",
+      "blob": "5cdd213af885d16422d4c8320a6d84da59dc15c3",
+      "mode": "100644",
+      "size": 182
+    },
+    "overlays/SystemUIResMyron/AndroidManifest.xml": {
+      "sha256": "04f1a2ad1a9cca064ad61a07405afe79f34a3f83c67e368436c513ab3d7ca094",
+      "blob": "3b083d83866fbe91dc15a8230f370af4fc78bc26",
+      "mode": "100644",
+      "size": 401
+    },
+    "overlays/SystemUIResMyron/res/values/dimens.xml": {
+      "sha256": "d98b03840df48c6021a682576f181f7c01d2f1e5e34f5f8b211b02929f7e41bc",
+      "blob": "399a45f0bfd76e057bb7d008339de6810f28090e",
+      "mode": "100644",
+      "size": 1206
+    },
+    "overlays/WifiOverlayMyron/Android.bp": {
+      "sha256": "44f0b38a9271b5e778628468d01166ef9f20c432795eef9b502773d4e36e750b",
+      "blob": "a6010dadbd8474a194b66d362dc472095e0290a4",
+      "mode": "100644",
+      "size": 171
+    },
+    "overlays/WifiOverlayMyron/AndroidManifest-CN.xml": {
+      "sha256": "17561e5880b2df6597e3036f3648a82f49a4cffe16d476cc44ec4f34c9a4b0da",
+      "blob": "b0ad69c664527084e4798d27b63331915a389861",
+      "mode": "100644",
+      "size": 591
+    },
+    "overlays/WifiOverlayMyron/AndroidManifest.xml": {
+      "sha256": "512ffd7f39a0dc593624200dab082787bd11c8904ecf8f9bc484b273b97279a0",
+      "blob": "86acd0ae7aaed281005052b3e05341c89a1dec63",
+      "mode": "100644",
+      "size": 472
+    },
+    "overlays/WifiOverlayMyron/res-CN/values/config.xml": {
+      "sha256": "a785f35a2b81a34a630604930f09a67b59f14d6d0e0c1a17f4f8c0e1db251675",
+      "blob": "0214d36f78373c72acd190df25ef296278525bb0",
+      "mode": "100644",
+      "size": 241
+    },
+    "overlays/WifiOverlayMyron/res/values/config.xml": {
+      "sha256": "4faa9d04159367edcf3196fce1d81838fcf2c45e069a1b1be99eda8409740cff",
+      "blob": "885c7b0e25340ca019a78be09a35950658b5c32e",
+      "mode": "100644",
+      "size": 237
+    },
+    "proprietary-files.txt": {
+      "sha256": "2c4eab88e82a2ac10bf8b6afa0ea9a280cc430a83c398a803074d51f2fe0620f",
+      "blob": "d106e626df19f1130f9a84181bf5c1227b7a2c94",
+      "mode": "100644",
+      "size": 71207
+    },
+    "proprietary-firmware.txt": {
+      "sha256": "6fe137961f8676771533c2ae7e5de8c1d6b6a792f8851ab41c5265113ebc062a",
+      "blob": "630ffc41e9396b4dde9f91e8e192b11de1e14da9",
+      "mode": "100644",
+      "size": 815
+    },
+    "sepolicy/vendor/property_contexts": {
+      "sha256": "472dff3dad3205aa4af00a380f88383ee3c6a7f9f7e720dc53917cc5667efc4b",
+      "blob": "908f75afc22b9727c5430676ce758195c8669c74",
+      "mode": "100644",
+      "size": 159
+    },
+    "setup-makefiles.py": {
+      "sha256": "cef07cbb5422bf6843700f0c320ea7f37cd84dd43c226354f41f50642e307c13",
+      "blob": "bed22a92034b7fd54235115ae5d8630cd27eeceb",
+      "mode": "100755",
+      "size": 43
+    }
+  }
+}

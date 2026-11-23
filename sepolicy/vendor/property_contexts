@@ -1,0 +1,2 @@
+# CIT already has get_prop(..., vendor_sensors_prop) in the common policy.
+persist.vendor.debug.collision.disable u:object_r:vendor_sensors_prop:s0 exact bool
