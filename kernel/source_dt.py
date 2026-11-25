@@ -260,6 +260,39 @@ def property_errors(nodes, required):
     return errors
 
 
+def thermal_binding_errors(nodes, required):
+    """Check resolved thermal channels, including the supplier's bus status."""
+    def enabled(path):
+        while path:
+            if path not in nodes or nodes[path].get('status', b'okay\0') not in (b'ok\0', b'okay\0'):
+                return False
+            if path == '/':
+                break
+            path = path.rsplit('/', 1)[0] or '/'
+        return True
+
+    errors = []
+    for rule in required:
+        zone, provider, channel = rule['zone'], rule['provider'], rule['channel']
+        sensor = nodes.get(provider, {})
+        handle = sensor.get('phandle', sensor.get('linux,phandle', b''))
+        args = nodes.get(zone, {}).get('thermal-sensors', b'')
+        children = [p for p, v in nodes.items() if p.rsplit('/', 1)[0] == provider
+                    and v.get('reg') == struct.pack('>I', channel)]
+        owners = [p for p, v in nodes.items()
+                  if handle in (v.get('phandle'), v.get('linux,phandle'))]
+        valid = (owners == [provider] and enabled(zone) and enabled(provider) and len(handle) == 4
+                 and handle != bytes(4) and args == handle + struct.pack('>I', channel)
+                 and sensor.get('#thermal-sensor-cells') == struct.pack('>I', 1)
+                 and b'qcom,spmi-adc5-gen4' in sensor.get('compatible', b'').split(b'\0')
+                 and len(children) == 1 and enabled(children[0])
+                 and nodes[children[0]].get('qcom,adc-tm-type') in
+                 (struct.pack('>I', 1), struct.pack('>I', 2)))
+        if not valid:
+            errors.append(zone)
+    return errors
+
+
 def verify_table(data, overlay, table):
     require(len(data) >= 64, 'Truncated DTBO image')
     h = struct.unpack_from('>8I', data)
@@ -446,6 +479,8 @@ def assemble(files, trees, profile, output, tools):
         require(not absent, 'Missing/disabled hardware providers on ' + spec['file'] + ': ' + ', '.join(absent))
         invalid = property_errors(nodes, profile.get('required_properties', {}))
         require(not invalid, 'Missing/incorrect hardware properties on ' + spec['file'] + ': ' + ', '.join(invalid))
+        invalid = thermal_binding_errors(nodes, profile.get('required_thermal_bindings', []))
+        require(not invalid, 'Invalid thermal sensor binding on ' + spec['file'] + ': ' + ', '.join(invalid))
         bases.append(base.read_bytes())
     table = profile['dtbo_table']
     raw_dtbo = work / 'dtbo.img'

@@ -604,5 +604,17 @@
         "compute-cb@11"
       ]
     }
+  ],
+  "required_thermal_bindings": [
+    {
+      "zone": "/soc/thermal-zones/conn_therm",
+      "provider": "/soc/arbiter@c400000/spmi@c426000/pmk8850@0/vadc@9000",
+      "channel": 10055
+    },
+    {
+      "zone": "/soc/thermal-zones/conn_therm2",
+      "provider": "/soc/arbiter@c400000/spmi@c426000/pmk8850@0/vadc@9000",
+      "channel": 331
+    }
   ]
 }
