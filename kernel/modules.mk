@@ -34,3 +34,10 @@ MYRON_VENDOR_LOAD_MODULES += hl7603.ko cpuss_telemetry.ko qcom_cpuss_sleep_stats
 MYRON_VENDOR_MODULES += sc96281_charger.ko
 MYRON_VENDOR_LOAD_MODULES += sc96281_charger.ko
 MYRON_ALL_MODULES += sc96281_charger.ko
+
+# Restored QTI thermal providers: normal Android vendor_dlkm loading.
+# SCMI, IPC logging and PMIC providers are already in the first-stage list.
+MYRON_THERMAL_MODULES := qcom-spmi-temp-alarm.ko qti_cpufreq_cdev.ko qti_devfreq_cdev.ko qti_userspace_cdev.ko qti_dynamic_hw_trip.ko
+MYRON_VENDOR_MODULES += $(MYRON_THERMAL_MODULES)
+MYRON_VENDOR_LOAD_MODULES += $(MYRON_THERMAL_MODULES)
+MYRON_ALL_MODULES += $(MYRON_THERMAL_MODULES)

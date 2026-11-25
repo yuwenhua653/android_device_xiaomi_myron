@@ -67,3 +67,29 @@ modules_install、完整符号/版本检查及标准 ROM 模块打包宏测试�
 原来的 297 个已验证模块全部存在，额外 GKI 模块不会自动加入 modules.load。
 测试主机缺少 Rust/pahole，没有据此证明生产工具链、完整 ROM 或新内核真机启动成功。
 R123 的真机功能结论只属于原构建，不自动延伸到此次原生迁移。
+
+## 2026-11-25 温控模块接入
+
+内核已选择的 `qcom-spmi-temp-alarm`、`qti_cpufreq_cdev`、
+`qti_devfreq_cdev`、`qti_userspace_cdev`、`qti_dynamic_hw_trip` 现加入
+正常 Android 的 vendor 模块加载清单。原有 SCMI、IPC logging 和 PMIC
+提供者仍由第一阶段加载；依赖信息由标准 modules_install/depmod 生成。
+
+`modules.json` 是早期导出的模块清单和历史依赖记录；新增源代码模块的
+实际构建/加载选择以 `modules.mk` 与当前 Kconfig 为准。不要使用旧清单
+重建并覆盖当前加载列表。此变更需要重新生成并刷入配套 `vendor_dlkm`，
+仅更新 `boot` 不会安装新增模块。
+
+这补齐了加载接入，不代表 thermal HAL 配置、`conn_therm` 绑定及 SCMI
+固件调用已通过实机验证。保留原厂阈值，不关闭温控保护。
+
+本轮无线事件队列修复见内核提交
+[`238cabb9740f`](https://github.com/yuwenhua653/android_kernel_xiaomi_sm8850/commit/238cabb9740f19d3f2495af26f2ec0f6dd4e69b6)。
+编译内核后可检查实际配置、ARM64 对象及展开后的加载列表：
+
+```sh
+python3 device/xiaomi/myron/kernel/check_thermal_modules.py \
+  --kernel-out "$OUT_DIR/target/product/myron/obj/KERNEL_OBJ"
+```
+
+该检查不替代完整镜像打包、模块加载和实机温控验证。
