@@ -102,3 +102,16 @@ python3 device/xiaomi/myron/kernel/check_thermal_modules.py \
 ```
 
 该检查不替代完整镜像打包、模块加载和实机温控验证。
+
+## 全部原生模块的主机构建检查
+
+当前 `TARGET_KERNEL_EXT_MODULES` 的 25 组外置模块已完成主机编译及 modpost，
+共 73 个外置模块；与 354 个树内模块合并后，427 个模块的 25,516 条符号版本
+记录、提供方和依赖校验通过。实际 Make 打包清单要求的 314 个模块全部存在，
+boot/vendor 加载列表也没有缺失项或重复项。这些是打包输入检查，不是最终镜像检查。
+
+模块仓库 `5638362f5eeb3cc0c8bbcd7d9cbf456e0fd9cc74` 补齐音频 Kbuild 对
+`msm_ext_display/Module.symvers` 的依赖；本模板已固定到该提交。
+完整记录位于内核仓库 `android/myron-native/external-native-qualification.md`。
+使用 Clang 19.1.7、CFI、MODVERSIONS，未覆盖 Android 生产工具链的 Rust/BTF/LTO
+配置、最终分区镜像及实机无线净充电/温控结果。正常 ROM 编译仍使用上文标准命令。
