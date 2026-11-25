@@ -7,9 +7,13 @@
 
 三个 repo 项目为：
 
-- kernel/xiaomi/sm8850：ACK、平台驱动、正常 Kconfig/Makefile。
-- kernel/xiaomi/sm8850-modules：68 个外置驱动的原生 Kbuild。
-- kernel/xiaomi/sm8850-devicetrees：与 R123 保持一致的设备 DTS。
+- kernel/xiaomi/sm8850：`yuwenhua653/android_kernel_xiaomi_sm8850`。
+- kernel/xiaomi/sm8850-modules：`yuwenhua653/android_kernel_xiaomi_sm8850-modules`。
+- kernel/xiaomi/sm8850-devicetrees：`yuwenhua653/android_kernel_xiaomi_sm8850-devicetrees`。
+
+三个仓库使用 `lineage-24.0`。`evolution.dependencies` 跟踪对应分支；
+`kernel/local_manifest.xml` 与内核发布的配套清单一致，固定已检查的模块和 DTS
+提交。后续有配套更新时，需同步更新这些固定提交；只更新 GitHub 分支不会覆盖 pin。
 
 BoardConfig 使用 TARGET_KERNEL_SOURCE、TARGET_KERNEL_CONFIG、
 TARGET_KERNEL_EXT_MODULE_ROOT、TARGET_KERNEL_EXT_MODULES。所有产物由标准
@@ -21,8 +25,10 @@ O= 输出目录承载；不添加源码可写白名单，不在编译时下载�
 设备树、sepolicy 和其他未提交修改，再合并本分支相对 f6e14d1 的提交。
 不要用旧 myron-r123-local-setup.py 重新覆盖这些原生规则。
 
-已有 kernel/xiaomi/sm8850* manifest 项目时直接修改原项目 revision，避免重复路径。
-没有这些项目时可复制 kernel/local_manifest.xml，然后正常同步：
+已有 kernel/xiaomi/sm8850* manifest 项目时，先保留本地提交及未提交改动，
+再对照 `kernel/local_manifest.xml` 更新原项目的 `name`、`revision` 和 `upstream`，
+避免重复路径。旧 `oppo_oplus_realme_sm8850` 的 `myron/native-*` 接入入口已不再使用。
+没有这些项目时可复制 `kernel/local_manifest.xml`，然后正常同步：
 
 ```sh
 repo sync -c -j4 kernel/xiaomi/sm8850 kernel/xiaomi/sm8850-modules kernel/xiaomi/sm8850-devicetrees
@@ -61,6 +67,9 @@ PRODUCT_COPY_FILES 安装 options machine_dlkm myron_tfa_links=1，避免丢失�
 vendor_dlkm 保持 EROFS lz4hc,9。
 
 ## 验证边界
+
+以下 338/68 个模块及 R123 记录属于最初的原生迁移，不是当前版本的全量验收。
+当前检查结果以三个内核仓库 `android/myron-native/` 下带源码提交和哈希的记录为准。
 
 Image、338 个树内模块及全部 68 个外置模块已经过主机编译；只读源码目录测试、
 modules_install、完整符号/版本检查及标准 ROM 模块打包宏测试已通过。

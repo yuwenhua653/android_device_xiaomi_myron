@@ -26,21 +26,21 @@
     "target_path": "vendor/xiaomi/sm8850-common"
   },
   {
-    "repository": "yuwenhua653/oppo_oplus_realme_sm8850",
+    "repository": "yuwenhua653/android_kernel_xiaomi_sm8850",
     "target_path": "kernel/xiaomi/sm8850",
-    "branch": "myron/native-kbuild",
+    "branch": "lineage-24.0",
     "remote": "github-non-los"
   },
   {
-    "repository": "yuwenhua653/oppo_oplus_realme_sm8850",
+    "repository": "yuwenhua653/android_kernel_xiaomi_sm8850-modules",
     "target_path": "kernel/xiaomi/sm8850-modules",
-    "branch": "myron/native-modules",
+    "branch": "lineage-24.0",
     "remote": "github-non-los"
   },
   {
-    "repository": "yuwenhua653/oppo_oplus_realme_sm8850",
+    "repository": "yuwenhua653/android_kernel_xiaomi_sm8850-devicetrees",
     "target_path": "kernel/xiaomi/sm8850-devicetrees",
-    "branch": "myron/native-devicetrees",
+    "branch": "lineage-24.0",
     "remote": "github-non-los"
   }
 ]
