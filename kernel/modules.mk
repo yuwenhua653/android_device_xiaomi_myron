@@ -41,3 +41,8 @@ MYRON_THERMAL_MODULES := qcom-spmi-temp-alarm.ko qti_cpufreq_cdev.ko qti_devfreq
 MYRON_VENDOR_MODULES += $(MYRON_THERMAL_MODULES)
 MYRON_VENDOR_LOAD_MODULES += $(MYRON_THERMAL_MODULES)
 MYRON_ALL_MODULES += $(MYRON_THERMAL_MODULES)
+
+# Board-temperature publisher; mca_event and its strategy subscribers load first.
+MYRON_VENDOR_MODULES += mi_thermal_interface.ko
+MYRON_VENDOR_LOAD_MODULES += mi_thermal_interface.ko
+MYRON_ALL_MODULES += mi_thermal_interface.ko

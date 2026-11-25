@@ -46,6 +46,22 @@ def main():
         if data[:6] != b'\x7fELF\x02\x01' or int.from_bytes(data[18:20], 'little') != 183:
             raise SystemExit('FAIL: not an AArch64 ELF object: ' + str(obj))
         print('PASS: ' + module + ' selected, built and in vendor load lists')
+    bridge = 'mi_thermal_interface.ko'
+    if 'CONFIG_MI_THERMAL_INTERFACE=m' not in config:
+        raise SystemExit('FAIL: board-temperature bridge not selected as a module')
+    for group in ('MYRON_VENDOR_MODULES', 'MYRON_VENDOR_LOAD_MODULES', 'MYRON_ALL_MODULES'):
+        if groups[group].count(bridge) != 1:
+            raise SystemExit('FAIL: expected exactly one ' + bridge + ' in ' + group)
+    data = (args.kernel_out / 'drivers/thermal/xiaomi/mi_thermal_interface.o').read_bytes()
+    if data[:6] != b'\x7fELF\x02\x01' or int.from_bytes(data[18:20], 'little') != 183:
+        raise SystemExit('FAIL: board-temperature bridge is not an AArch64 ELF object')
+    load = groups['MYRON_VENDOR_LOAD_MODULES']
+    for dependency in ('mca_event.ko', 'mca_connector_antiburn.ko',
+                       'mca_strategy_buckchg.ko', 'mca_strategy_fg_comp.ko',
+                       'mca_smart_charge.ko'):
+        if dependency not in load or load.index(dependency) >= load.index(bridge):
+            raise SystemExit('FAIL: board-temperature subscriber/provider order: ' + dependency)
+    print('PASS: board-temperature bridge selected, built and ordered after MCA subscribers')
     # These dependencies precede the added consumers in the first-stage load list.
     for dependency in ('qcom_scmi_client.ko', 'qcom_scmi_vendor.ko',
                        'qcom_ipc_logging.ko', 'qcom-spmi-pmic.ko'):
